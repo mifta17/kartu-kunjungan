@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import TopAppBar from "./components/TopAppBar";
 
 import Home from "./pages/Home";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 
 
 function App() {
