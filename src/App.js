@@ -1,22 +1,21 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-
+import PrivateRoute from "./components/PrivateRoute"
+import { AuthProvider } from "./contexts/AuthContext";
 import TopAppBar from "./components/TopAppBar";
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-
 
 function App() {
   return (
     <div>
-      <TopAppBar />
-      <div className="container">
+      <AuthProvider>
+        <TopAppBar />
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Home} />
+          <PrivateRoute exact path="/" component={Home} />
         </Switch>
-      </div>
+      </AuthProvider>
     </div>
   );
 }
